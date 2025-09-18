@@ -1,11 +1,7 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import { router } from "expo-router";
+import { Link } from "expo-router";  // Import Link for declarative navigation
 
 export default function Home() {
-  const handleLogout = () => {
-    router.replace("/login");
-  };
-
   return (
     <View style={{
       flex: 1,
@@ -26,24 +22,25 @@ export default function Home() {
           My Plants
         </Text>
         
-        <TouchableOpacity
-          onPress={handleLogout}
-          style={{
-            backgroundColor: "#ff0000", 
-            paddingVertical: 10,
-            paddingHorizontal: 30,
-            borderRadius: 8,
-            alignItems: "center",
-          }}
-        >
-          <Text style={{
-            color: "white",
-            fontSize: 16,
-            fontWeight: "600",
-          }}>
-            Logout
-          </Text>
-        </TouchableOpacity>
+        <Link href="/login">
+          <TouchableOpacity
+            style={{
+              backgroundColor: "#ff0000", 
+              paddingVertical: 10,
+              paddingHorizontal: 30,
+              borderRadius: 8,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{
+              color: "white",
+              fontSize: 16,
+              fontWeight: "600",
+            }}>
+              Logout
+            </Text>
+          </TouchableOpacity>
+        </Link>
       </View>
 
       <View style={{
@@ -104,21 +101,22 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={{
-        backgroundColor: "#5cbd3e",
-        paddingVertical: 15,
-        borderRadius: 8,
-        alignItems: "center",
-        marginTop: 20,
-      }}>
-        <Text style={{
-          color: "white",
-          fontSize: 16,
-          fontWeight: "600",
+      
+        <TouchableOpacity style={{
+          backgroundColor: "#5cbd3e",
+          paddingVertical: 15,
+          borderRadius: 8,
+          alignItems: "center",
+          marginTop: 20,
         }}>
-          Add New Plant
-        </Text>
-      </TouchableOpacity>
+          <Text style={{
+            color: "white",
+            fontSize: 16,
+            fontWeight: "600",
+          }}>
+            Add New Plant
+          </Text>
+        </TouchableOpacity>
     </View>
   );
 }
