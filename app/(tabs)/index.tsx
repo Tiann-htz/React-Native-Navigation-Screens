@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import { Link } from "expo-router";  // Import Link for navigation
+import { Link } from "expo-router";
 
 export default function Welcome() {
   return (
